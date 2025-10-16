@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hồ sơ cá nhân - Kim Quang Tú</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, sans-serif;
+    }
+
+    body {
+      background: #e9eef6;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .cv-container {
+      background: #fff;
+      width: 90%;
+      max-width: 1200px;
+      border-radius: 10px;
+      overflow: hidden;
+      display: flex;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+    }
+
+    /* ===== CỘT TRÁI ===== */
+    .left-column {
+      background: linear-gradient(180deg, #3255b6, #1b367f);
+      color: #fff;
+      flex: 1 1 35%;
+      padding: 50px 30px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+    }
+
+    .profile-pic {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      border: 4px solid #fff;
+      object-fit: cover;
+      margin-bottom: 25px;
+      transition: transform 0.3s ease;
+    }
+    .profile-pic:hover { transform: scale(1.05); }
+
+    .info-section {
+      margin-top: 20px;
+      width: 100%;
+      text-align: left;
+    }
+
+    .info-section h2,
+    .section h2 {
+      font-size: 1.1rem;
+      text-transform: uppercase;
+      border-bottom: 2px solid rgba(255,255,255,0.3);
+      margin-bottom: 10px;
+      padding-bottom: 5px;
+    }
+
+    .info-section p {
+      margin: 6px 0;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    .section {
+      width: 100%;
+      margin-top: 25px;
+      text-align: left;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    .qr-zalo {
+      text-align: center;
+      margin-top: 25px;
+    }
+
+    .qr-zalo img {
+      width: 120px;
+      border-radius: 10px;
+      border: 2px solid #fff;
+      margin-top: 8px;
+    }
+
+    /* ===== CỘT PHẢI ===== */
+    .right-column {
+      flex: 1 1 65%;
+      padding: 50px 60px;
+      background: #f9fafc;
+      color: #333;
+    }
+
+    .name {
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: #1a1a1a;
+      letter-spacing: 1px;
+    }
+
+    .job-title {
+      font-size: 1.1rem;
+      color: #3255b6;
+      margin-bottom: 25px;
+    }
+
+    .right-column h3 {
+      font-size: 1.1rem;
+      color: #3255b6;
+      text-transform: uppercase;
+      margin: 25px 0 10px;
+      border-left: 4px solid #3255b6;
+      padding-left: 10px;
+    }
+
+    .about p {
+      line-height: 1.7;
+      color: #444;
+      margin-top: 10px;
+    }
+
+    .experience-item {
+      margin-bottom: 20px;
+    }
+
+    .experience-item h4 {
+      font-size: 1rem;
+      font-weight: bold;
+      color: #111;
+    }
+
+    .experience-item span {
+      display: block;
+      color: #666;
+      font-size: 0.9rem;
+      margin-bottom: 5px;
+    }
+
+    .experience-item p {
+      color: #444;
+      line-height: 1.6;
+    }
+
+    /* ===== CHỨC VỤ ===== */
+    .positions {
+      margin-top: 20px;
+    }
+
+    .positions h2 {
+      font-size: 1rem;
+      color: #3255b6;
+      text-transform: uppercase;
+      border-bottom: 2px solid #ccc;
+      padding-bottom: 5px;
+      margin-bottom: 8px;
+    }
+
+    .positions ul {
+      list-style: none;
+      margin-top: 10px;
+      padding-left: 5px;
+    }
+
+    .positions li {
+      font-size: 0.95rem;
+      color: #444;
+      margin-bottom: 6px;
+    }
+
+    /* ===== KỸ NĂNG ===== */
+    .skills {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px 30px;
+      margin-top: 10px;
+    }
+
+    .skills p {
+      font-size: 0.95rem;
+      color: #333;
+      margin-bottom: 5px;
+    }
+
+    .skill-bar {
+      background: #e0e0e0;
+      border-radius: 5px;
+      height: 8px;
+      overflow: hidden;
+    }
+
+    .skill-fill {
+      height: 8px;
+      background: #3255b6;
+    }
+
+    @media (max-width: 900px) {
+      .cv-container {
+        flex-direction: column;
+      }
+      .left-column {
+        flex: 1 1 100%;
+        padding: 40px 20px;
+      }
+      .right-column {
+        flex: 1 1 100%;
+        padding: 40px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="cv-container">
+    <!-- CỘT TRÁI -->
+    <div class="left-column">
+      <img src="z7120599923392_8c93e2806c3997737b31575b4fba22dd.jpg" alt="Ảnh đại diện" class="profile-pic">
+
+      <div class="info-section">
+        <h2>Liên hệ</h2>
+        <p>📞 0362 441 249</p>
+        <p>✉️ tukim34509@gmail.com</p>
+        <p>📍 TP. Hồ Chí Minh</p>
+        <p>🔵 facebook.com/kim.quang.tu.2024</p>
+      </div>
+
+      <div class="section">
+        <h2>Thông tin cơ bản</h2>
+        <p>Liên lạc công việc</p>
+        <p>Email: 2551050234tu@ou.edu.vn</p>
+      </div>
+
+      <div class="qr-zalo">
+        <h2>QR Zalo</h2>
+        <img src="z7120665375769_5e54b18cfe9a069e723474f141c13fd5.jpg" alt="QR Zalo">
+      </div>
+
+      <div class="section">
+        <h2>Học vấn</h2>
+        <p><strong>Đại học Mở TP.HCM</strong><br>Sinh viên Công nghệ thông tin</p>
+      </div>
+    </div>
+
+    <!-- CỘT PHẢI -->
+    <div class="right-column">
+      <div class="header">
+        <div class="name">KIM QUANG TÚ</div>
+        <div class="job-title">Sinh viên Công nghệ thông tin</div>
+      </div>
+
+      <div class="about">
+        <h3>Thông tin về tôi</h3>
+        <p>Tôi là sinh viên Đại học Mở TP.HCM, có niềm đam mê phát triển website và ứng dụng web. 
+        Tôi yêu thích việc sáng tạo giao diện người dùng, lập trình logic, và không ngừng học hỏi 
+        công nghệ mới để nâng cao kỹ năng của mình.</p>
+      </div>
+
+      <div class="experience">
+        <h3>Kinh nghiệm làm việc</h3>
+
+        <div class="experience-item">
+          <h4>Lập trình & Sáng tạo nội dung</h4>
+          <span>2025 - Hiện tại</span>
+          <p>Phát triển website cá nhân, portfolio và hệ thống web cá nhân. 
+          Sử dụng HTML, CSS, C++.</p>
+        </div>
+
+        <section class="positions">
+          <h2>Các chức vụ đảm nhận</h2>
+          <ul>
+            <li><strong>2023:</strong> Lớp phó học tập</li>
+            <li><strong>2024:</strong> Lớp phó học tập</li>
+            <li><strong>2025:</strong> Lớp trưởng & Phó Bí thư Chi đoàn</li>
+            <li><strong>2026:</strong> Ủy viên Ban chấp hành Chi hội</li>
+          </ul>
+        </section>
+
+        <div class="experience-item">
+          <h4>Tham gia câu lạc bộ</h4>
+          <span>2025</span>
+          <p>Tham gia dự án xây dựng ứng dụng quản lý bán hàng. 
+          Viết API với Node.js và giao diện bằng React.</p>
+        </div>
+      </div>
+
+      <div class="skills-section">
+        <h3>Kỹ năng cơ bản</h3>
+        <div class="skills">
+          <div>
+            <p>HTML / CSS</p>
+            <div class="skill-bar"><div class="skill-fill" style="width: 75%;"></div></div>
+          </div>
+          <div>
+            <p>PowerPoint / Canva</p>
+            <div class="skill-bar"><div class="skill-fill" style="width: 90%;"></div></div>
+          </div>
+          <div>
+            <p>Word / Excel</p>
+            <div class="skill-bar"><div class="skill-fill" style="width: 85%;"></div></div>
+          </div>
+          <div>
+            <p>C++</p>
+            <div class="skill-bar"><div class="skill-fill" style="width: 90%;"></div></div>
+          </div>
+          <div>
+            <p>Photoshop</p>
+            <div class="skill-bar"><div class="skill-fill" style="width: 60%;"></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
